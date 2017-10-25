@@ -13,10 +13,25 @@
   <p class="text text-1">Artist</p>
   <p class="text text-2">City</p>
   <p class="text text-3">Date</p>
-  <input class="_input _input-1" type="text">
-  <input class="_input _input-2" type="text">
-  <input class="_input _input-3" type="text">
-  <button class="_button _button-1">search</button>
+  <input class="_input _input-1" type="text" id="artist"/>
+  <input class="_input _input-2" type="text" id="city" />
+  <input class="_input _input-3" type="text" id="date" />
+  
+
+
+<script>
+  function submit(){
+      var artist = document.getElementById('artist');
+      var city = document.getElementById('city');
+	  var date = document.getElementById('date');
+      var code = 'http://localhost:5000/search/setlist/&date='+date.value+'&city='+city.value+'&artist='+artist.value;
+  //window.alert(code);
+  location.href= code;
+  
+  }
+
+</script>
+  <button class="_button _button-1" onclick="submit();" href="javascript:;">search</button>
   <p class="text text-4">SetSpoT</p>
   <div class="container container-1"></div>
   <div class="container container-2"></div>
